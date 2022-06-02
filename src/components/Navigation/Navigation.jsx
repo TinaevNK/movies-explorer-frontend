@@ -31,7 +31,7 @@ function Navigation({ authorized, isBurgerOpened, onClickBurger }) {
         <nav className={`navigation navigation_state_${isBurgerOpened ? 'opened' : 'closed'}`}>
           {/* <button className="navigation__menu-toggle button" type="button" onClick={handleOnClickBurger}>
           </button> */}
-          <ul className={`navigation__list navigation__list_state_${isBurgerOpened ? 'opened' : 'closed'}`}>
+          <ul className={`navigation__list navigation__list_logged navigation__list_state_${isBurgerOpened ? 'opened' : 'closed'}`}>
             <li className="navigation__item">
               <NavLink exact to="/" className="navigation__link" activeClassName={activeLink}>
                 Главная

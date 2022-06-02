@@ -17,7 +17,7 @@ export default function App() {
     <div className="app">
       <Switch>
         <Route path="/" exact>
-          <Header themeDark={false} authorized={false} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened} />
+          <Header themeDark={false} authorized={true} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened} />
           <Main authorized={false} />
         </Route>
         <Route path="/movies">
