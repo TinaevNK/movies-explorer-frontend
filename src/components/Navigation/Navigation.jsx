@@ -1,12 +1,14 @@
 import './Navigation.css';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Navigation({ authorized, isBurgerOpened, onClickBurger }) {
 
-  const handleOnClickBurger = () => {
-    onClickBurger(isBurgerOpened);
-  }
+  // const handleOnClickBurger = () => {
+  //   onClickBurger(isBurgerOpened);
+  // }
+
+  const activeLink = `navigation__link_active_${isBurgerOpened ? 'mobile' : 'desktop'}`
 
   return (
     <>
@@ -14,12 +16,12 @@ function Navigation({ authorized, isBurgerOpened, onClickBurger }) {
         <nav className="navigation">
           <ul className="navigation__list">
             <li className="navigation__item">
-              <Link to="signup" className="navigation__link">
+              <Link to="/signup" className="navigation__link navigation__link_landing">
                 Регистрация
               </Link>
             </li>
             <li className="navigation__item">
-              <Link to="signin" className="navigation__link navigation__link_type_signin">
+              <Link to="/signin" className="navigation__link navigation__link_landing navigation__link_signin">
                 Войти
               </Link>
             </li>
@@ -27,31 +29,30 @@ function Navigation({ authorized, isBurgerOpened, onClickBurger }) {
         </nav>
       ) : (
         <nav className={`navigation navigation_state_${isBurgerOpened ? 'opened' : 'closed'}`}>
-          <button className="navigation__menu-toggle button" type="button" onClick={handleOnClickBurger}>
-            <span className="visually-hidden">Открыть меню</span>
-          </button>
+          {/* <button className="navigation__menu-toggle button" type="button" onClick={handleOnClickBurger}>
+          </button> */}
           <ul className={`navigation__list navigation__list_state_${isBurgerOpened ? 'opened' : 'closed'}`}>
-              <li className="navigation__item">
-                <Link to="/" className="link navigation__link navigation__link_type_menu" tabIndex={`${isBurgerOpened ? '' : '-1'}`}>
-                  Главная
-                </Link>
-              </li>
-              <li className="navigation__item">
-                <Link to="movies" className="link navigation__link navigation__link_type_menu navigation__link_state_active" tabIndex={`${isBurgerOpened ? '' : '-1'}`}>
-                  Фильмы
-                </Link>
-              </li>
-              <li className="navigation__item">
-                <Link to="saved-movies" className="link navigation__link navigation__link_type_menu" tabIndex={`${isBurgerOpened ? '' : '-1'}`}>
-                  Сохранённые фильмы
-                </Link>
-              </li>
-              <li className="navigation__item">
-                <Link to="profile" className="link navigation__link navigation__link_type_account" tabIndex={`${isBurgerOpened ? '' : '-1'}`}>
-                  Аккаунт
-                </Link>
-              </li>
-            </ul>
+            <li className="navigation__item">
+              <NavLink exact to="/" className="navigation__link" activeClassName={activeLink}>
+                Главная
+              </NavLink>
+            </li>
+            <li className="navigation__item">
+              <NavLink to="/movies" className="navigation__link" activeClassName={activeLink}>
+                Фильмы
+              </NavLink>
+            </li>
+            <li className="navigation__item">
+              <NavLink to="/saved-movies" className="navigation__link" activeClassName={activeLink}>
+                Сохранённые фильмы
+              </NavLink>
+            </li>
+            <li className="navigation__item">
+              <NavLink to="/profile" className="navigation__link navigation__link_type_account">
+                Аккаунт
+              </NavLink>
+            </li>
+          </ul>
         </nav>
       )}
     </>

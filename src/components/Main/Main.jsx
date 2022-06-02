@@ -7,15 +7,18 @@ import './Main.css';
 
 function Main({onClickMenu, isMenuOpened, authorized}) {
   return (
-    <>
-      {/* <Promo />
-      <NavTab />
-      <AboutProject />
-      <Techs />
-      <AboutMe />
-      <Portfolio />
-      <Footer /> */}
-    </>
+    <div>
+      124
+    </div>
+    // <>
+    //   {/* <Promo />
+    //   <NavTab />
+    //   <AboutProject />
+    //   <Techs />
+    //   <AboutMe />
+    //   <Portfolio />
+    //   <Footer /> */}
+    // </>
   );
 }
 

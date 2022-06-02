@@ -23,7 +23,13 @@
 }
 
 .header__link {
+  transition: all .3s ease;
   height: 38px;
+}
+
+.header__link:hover {
+  transform: rotate(45deg);
+  opacity: .7;
 }
 
 @media screen and (max-width: 800px) {
