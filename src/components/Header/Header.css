@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.header_theme_dark {
+  background-color: #202020;
+}
+
+.header_theme_bright {
+  background-color: #073042;
+}
+
+.header__container {
+  max-width: 1280px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 18px 70px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.header__link {
+  height: 38px;
+}
+
+@media screen and (max-width: 800px) {
+  .header__container {
+    padding: 18px 30px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header__container {
+    padding: 18px 14px;
+  }
+}
+

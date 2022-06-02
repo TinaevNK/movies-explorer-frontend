@@ -1,23 +1,48 @@
 import './App.css';
+import { useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Header from '../Header/Header';
 
-function App() {
+export default function App() {
+
+  const [isBurgerOpened, setIsBurgerOpened] = useState(false);
+
+
+  const onClickBurger = (isBurgerOpened) => {
+    setIsBurgerOpened(!isBurgerOpened);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Switch>
+        <Route path="/" exact>
+          <Header themeDark={false} authorized={false} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened} />
+          {/* <Main authorized={false} /> */}
+        </Route>
+        {/* <Route path="/movies">
+          <Header isLoggedIn={true} />
+          <Movies />
+          <Footer />
+        </Route>
+        <Route exact path="/saved-movies">
+          <Header isLoggedIn={true} />
+          <SavedMovies />
+          <Footer />
+        </Route>
+        <Route exact path="/signup">
+          <Register />
+        </Route>
+        <Route exact path="/signin">
+          <Login />
+        </Route>
+        <Route exact path="/profile">
+          <Header isLoggedIn={true} />
+          <Profile />
+        </Route>
+        <Route path="*">
+          <NotFound />
+        </Route> */}
+      </Switch>
     </div>
   );
 }
-
-export default App;
