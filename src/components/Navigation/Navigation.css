@@ -1,6 +1,7 @@
 .navigation {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .navigation__list {
@@ -109,6 +110,46 @@
     gap: 24px;
   }
 }
+
+
+.header__hamburger-button {
+  display: flex; /* используем flex для центрирования содержимого */
+  align-items: center;  /* центрируем содержимое кнопки */
+  position: absolute;
+  top: 9px;
+  right: 8px;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1;
+  transition: all .3s ease;
+}
+
+.header__hamburger-button:hover {
+  opacity: 0.8;
+}
+
+/* добавляем "гамбургер" */
+.header__hamburger-button > span,
+.header__hamburger-button > span::before,
+.header__hamburger-button > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+}
+
+.header__hamburger-button > span::before {
+  content: '';
+  top: -9px;
+}
+
+.header__hamburger-button > span::after {
+  content: '';
+  top: 9px;
+}
+
 
 /* .navigation__link_type_menu {
   padding-bottom: 7px;

@@ -31,6 +31,9 @@ function Navigation({ authorized, isBurgerOpened, onClickBurger }) {
         <nav className={`navigation navigation_state_${isBurgerOpened ? 'opened' : 'closed'}`}>
           {/* <button className="navigation__menu-toggle button" type="button" onClick={handleOnClickBurger}>
           </button> */}
+          <div class="header__hamburger-button">
+          <span></span>
+          </div>
           <ul className={`navigation__list navigation__list_logged navigation__list_state_${isBurgerOpened ? 'opened' : 'closed'}`}>
             <li className="navigation__item">
               <NavLink exact to="/" className="navigation__link" activeClassName={activeLink}>
