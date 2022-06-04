@@ -1,12 +1,8 @@
 import './Navigation.css';
-import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import Hamburger from '../Hamburger/Hamburger.jsx';
 
-function Navigation({ authorized, isBurgerOpened, onClickBurger }) {
-
-  // const handleOnClickBurger = () => {
-  //   onClickBurger(isBurgerOpened);
-  // }
+export default function Navigation({ authorized, isBurgerOpened, onClickBurger }) {
 
   const activeLink = `navigation__link_active_${isBurgerOpened ? 'mobile' : 'desktop'}`
 
@@ -15,12 +11,12 @@ function Navigation({ authorized, isBurgerOpened, onClickBurger }) {
       {!authorized ? (
         <nav className="navigation">
           <ul className="navigation__list">
-            <li className="navigation__item">
+            <li>
               <Link to="/signup" className="navigation__link navigation__link_landing">
                 Регистрация
               </Link>
             </li>
-            <li className="navigation__item">
+            <li>
               <Link to="/signin" className="navigation__link navigation__link_landing navigation__link_signin">
                 Войти
               </Link>
@@ -29,11 +25,7 @@ function Navigation({ authorized, isBurgerOpened, onClickBurger }) {
         </nav>
       ) : (
         <nav className={`navigation navigation_state_${isBurgerOpened ? 'opened' : 'closed'}`}>
-          {/* <button className="navigation__menu-toggle button" type="button" onClick={handleOnClickBurger}>
-          </button> */}
-          <div class="header__hamburger-button">
-          <span></span>
-          </div>
+          <Hamburger isBurgerOpened={isBurgerOpened} onClickBurger={onClickBurger} />
           <ul className={`navigation__list navigation__list_logged navigation__list_state_${isBurgerOpened ? 'opened' : 'closed'}`}>
             <li className="navigation__item">
               <NavLink exact to="/" className="navigation__link" activeClassName={activeLink}>
@@ -51,7 +43,7 @@ function Navigation({ authorized, isBurgerOpened, onClickBurger }) {
               </NavLink>
             </li>
             <li className="navigation__item">
-              <NavLink to="/profile" className="navigation__link navigation__link_type_account">
+              <NavLink to="/profile" className="navigation__link navigation__link_type_account" activeClassName={activeLink}>
                 Аккаунт
               </NavLink>
             </li>
@@ -61,5 +53,3 @@ function Navigation({ authorized, isBurgerOpened, onClickBurger }) {
     </>
   );
 }
-
-export default Navigation;

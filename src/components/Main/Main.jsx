@@ -3,23 +3,23 @@
 // import Navigation from "../Navigation/Navigation"
 
 
-import './Main.css';
+// import './Main.css';
 
-function Main({onClickMenu, isMenuOpened, authorized}) {
-  return (
-    <div>
-      124
-    </div>
-    // <>
-    //   {/* <Promo />
-    //   <NavTab />
-    //   <AboutProject />
-    //   <Techs />
-    //   <AboutMe />
-    //   <Portfolio />
-    //   <Footer /> */}
-    // </>
-  );
-}
+// function Main({onClickMenu, isMenuOpened, authorized}) {
+//   return (
+//     <div>
+//       124
+//     </div>
+//     // <>
+//     //   {/* <Promo />
+//     //   <NavTab />
+//     //   <AboutProject />
+//     //   <Techs />
+//     //   <AboutMe />
+//     //   <Portfolio />
+//     //   <Footer /> */}
+//     // </>
+//   );
+// }
 
-export default Main;
+// export default Main;
