@@ -101,6 +101,7 @@
 
   .promo__logo {
     max-width: 210px;
+    transition: all .1s ease;
   }
 
   .promo__title {
