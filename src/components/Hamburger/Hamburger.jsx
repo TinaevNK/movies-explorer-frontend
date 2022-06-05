@@ -18,8 +18,8 @@ export default function Hamburger({isBurgerOpened, onClickBurger}) {
   }, [isMobile, onClickBurger]);
 
   return (
-    <div className={`hamburger-button hamburger-button_${isBurgerOpened ? 'on': 'off'}`} onClick={handleOnClickBurger}>
+    <button type="button" className={`hamburger-button hamburger-button_${isBurgerOpened ? 'on': 'off'}`} onClick={handleOnClickBurger}>
       <span></span>
-    </div>
+    </button>
   )
 }

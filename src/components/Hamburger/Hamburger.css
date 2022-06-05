@@ -9,6 +9,9 @@
   cursor: pointer;
   z-index: 1;
   transition: all .3s ease;
+  border:none;
+  background: none;
+  padding: 0;
 }
 
 .hamburger-button:hover {
