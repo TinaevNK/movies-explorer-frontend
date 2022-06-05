@@ -2,7 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
-// import Main from '../Main/Main.jsx'
+import Main from '../Main/Main.jsx'
 
 export default function App() {
 
@@ -18,7 +18,7 @@ export default function App() {
       <Switch>
         <Route path="/" exact>
           <Header themeDark={false} authorized={false} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened} />
-          {/* <Main authorized={false} /> */}
+          <Main />
         </Route>
         <Route path="/movies">
           <Header themeDark={true} authorized={true} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened} />
