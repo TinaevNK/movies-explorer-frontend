@@ -35,7 +35,7 @@
   margin: 0;
   box-sizing: border-box;
   padding: 70px 0 97px;
-  justify-content: space-between;
+  gap: 40px;
 }
 
 .about-project__definition-item {
@@ -74,9 +74,9 @@
 .about-project__frontend {
   display: flex;
   flex-direction: column;
-  width: 80%;
   align-items: center;
   gap: 15px;
+  flex-grow: 1;
 }
 
 .about-project__backend-duration {
@@ -107,4 +107,90 @@
   font-size: 14px;
   line-height: 1.21;
   color: #8B8B8B;
+}
+
+@media screen and (max-width: 800px) {
+  .about-project__container {
+    padding: 90px 50px;
+  }
+
+  .about-project__definition-description {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 22px;
+  }
+
+  .about-project__definition-item {
+    max-width: 319px;
+  }
+
+  .about-project__definition-list {
+    padding-bottom: 81px;
+    gap: 30px;
+  }
+
+  .about-project__backend {
+    width: 21%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .about-project__container {
+    padding: 71px 18px;
+  }
+
+  .about-project__title {
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: -0.04em;
+    padding-bottom: 28px;
+  }
+
+  .about-project__definition-list {
+    flex-direction: column;
+    padding: 60px 0 48px;
+    gap: 45px;
+  }
+
+  .about-project__definition-item {
+    max-width: 284px;
+  }
+
+  .about-project__definition-title {
+    font-size: 18px;
+    line-height: 1.22;
+  }
+
+  .about-project__definition-description {
+    font-size: 11px;
+    line-height: 1.45;
+    margin-top: 16px;
+  }
+
+  .about-project__backend-duration {
+    font-size: 11px;
+    line-height: 1.18;
+    padding: 11px 0;
+  }
+
+  .about-project__frontend-duration {
+    font-size: 11px;
+    line-height: 1.18;
+    padding: 11px 0;
+  }
+
+  .about-project__scheme-title {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.18;
+  }
+
+  .about-project__backend {
+    width: 35%;
+    gap: 10px;
+  }
+
+  .about-project__frontend {
+    gap: 10px;
+  }
 }
