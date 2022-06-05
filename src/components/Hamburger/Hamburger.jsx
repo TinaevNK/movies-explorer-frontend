@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 
 export default function Hamburger({isBurgerOpened, onClickBurger}) {
 
+  // контроль ширины экрана, для правильной логики работы классов и отображения меню
   const isMobile = useMediaQuery({ query: `(max-width: 800px)` });
 
   const handleOnClickBurger = () => {
@@ -11,14 +12,10 @@ export default function Hamburger({isBurgerOpened, onClickBurger}) {
   }
 
   useEffect(() => {
-    if (isMobile) {
+    if (!isMobile) {
       onClickBurger(true);
-    } else {
-      onClickBurger(false);
     }
-  }, [isMobile]);
-
-  // НАДО ПОПРАВИТЬ ЛОГИКУ
+  }, [isMobile, onClickBurger]);
 
   return (
     <div className={`hamburger-button hamburger-button_${isBurgerOpened ? 'on': 'off'}`} onClick={handleOnClickBurger}>
