@@ -27,11 +27,13 @@ export default function Navigation({ authorized, isBurgerOpened, onClickBurger }
         <nav className={`navigation navigation_state_${isBurgerOpened ? 'opened' : 'closed'}`}>
           <Hamburger isBurgerOpened={isBurgerOpened} onClickBurger={onClickBurger} />
           <ul className={`navigation__list navigation__list_logged navigation__list_state_${isBurgerOpened ? 'opened' : 'closed'}`}>
-            <li className="navigation__item">
-              <NavLink exact to="/" className="navigation__link" activeClassName={activeLink}>
-                Главная
-              </NavLink>
-            </li>
+            {isBurgerOpened && (
+              <li className="navigation__item">
+                <NavLink exact to="/" className="navigation__link" activeClassName={activeLink}>
+                  Главная
+                </NavLink>
+              </li>
+            )}
             <li className="navigation__item">
               <NavLink to="/movies" className="navigation__link" activeClassName={activeLink}>
                 Фильмы
