@@ -132,6 +132,10 @@
   .about-project__backend {
     width: 21%;
   }
+
+  .about-project__scheme-title {
+    font-weight: 400;
+  }
 }
 
 @media screen and (max-width: 400px) {
