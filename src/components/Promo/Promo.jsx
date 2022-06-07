@@ -12,7 +12,7 @@ export default function Promo() {
           <p className="promo__description">
             Листайте ниже, чтобы узнать больше про этот проект и его создателя.
           </p>
-          <a href="https://github.com/TinaevNK/movies-explorer-frontend" target="_blank" rel="noopener noreferrer" className="promo__learn-more-link" >
+          <a href="https://goo.su/P65u" target="_blank" rel="noopener noreferrer" className="promo__learn-more-link" >
           Узнать больше
           </a>
         </div>

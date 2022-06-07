@@ -73,7 +73,7 @@
   letter-spacing: -0.04em;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
   .techs__container {
     padding: 90px 50px;
   }
@@ -99,7 +99,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
   .techs__container {
     padding: 70px 18px;
   }
