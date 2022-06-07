@@ -1,5 +1,5 @@
-import "./AboutMe.css";
-import avatar from "../../images/avatar.jpg";
+import './AboutMe.css';
+import avatar from '../../images/avatar.jpg';
 
 export default function AboutMe() {
   return (

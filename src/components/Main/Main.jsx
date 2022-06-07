@@ -3,6 +3,7 @@ import Promo from '../Promo/Promo.jsx'
 import AboutProject from '../AboutProject/AboutProject.jsx';
 import Techs from '../Techs/Techs.jsx';
 import AboutMe from '../AboutMe/AboutMe.jsx';
+import Portfolio from '../Portfolio/Portfolio.jsx';
 
 export default function Main() {
   return (
@@ -11,7 +12,7 @@ export default function Main() {
       <AboutProject />
       <Techs />
       <AboutMe />
-      {/* <Portfolio /> */}
+      <Portfolio />
     </main>
   );
 }
