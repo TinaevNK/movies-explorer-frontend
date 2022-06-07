@@ -56,6 +56,7 @@
 
 .promo__learn-more-link:hover {
   transform: scale(1.05);
+  opacity: .7;
 }
 
 @media screen and (max-width: 800px) {

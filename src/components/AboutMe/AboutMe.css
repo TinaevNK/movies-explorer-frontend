@@ -78,6 +78,11 @@
   line-height: 1.21;
   color: #fff;
   text-decoration: none;
+  transition: all .3s ease;
+}
+
+.about-me__social-link:hover {
+  opacity: .7;
 }
 
 .about-me__avatar {
