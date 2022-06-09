@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import Main from '../Main/Main.jsx';
 import Footer from '../Footer/Footer.jsx';
+import Movies from '../Movies/Movies.jsx';
 
 export default function App() {
 
@@ -24,8 +25,8 @@ export default function App() {
         </Route>
         <Route path="/movies">
           <Header themeDark={true} authorized={true} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened} />
-          {/* <Movies />
-          <Footer /> */}
+          <Movies />
+          {/* <Footer /> */}
         </Route>
         <Route exact path="/saved-movies">
           <Header themeDark={true} authorized={true} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened} />

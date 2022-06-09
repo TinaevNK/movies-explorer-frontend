@@ -7,15 +7,22 @@
   width: 28px;
   height: 20px;
   cursor: pointer;
-  z-index: 1;
-  transition: all .3s ease;
-  border:none;
+  z-index: 5;
+  transition: all 0.3s ease;
+  border: none;
   background: none;
   padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .hamburger-button:hover {
   opacity: 0.8;
+}
+
+.hamburger-button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 4px;
+  border-radius: 5px;
 }
 
 .hamburger-button_off > span,
@@ -30,12 +37,12 @@
 }
 
 .hamburger-button_off > span::before {
-  content: '';
+  content: "";
   top: -10px;
 }
 
 .hamburger-button_off > span::after {
-  content: '';
+  content: "";
   top: 10px;
 }
 
@@ -52,13 +59,13 @@
 }
 
 .hamburger-button_on > span::before {
-  content: '';
+  content: "";
   top: 0;
   transform: rotate(0);
 }
 
 .hamburger-button_on > span::after {
-  content: '';
+  content: "";
   top: 0;
   transform: rotate(90deg);
 }

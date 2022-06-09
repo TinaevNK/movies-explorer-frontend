@@ -12,6 +12,7 @@
   align-items: center;
   gap: 30px;
   transition: all .6s ease;
+  z-index: 3;
 }
 
 .navigation__list_logged {
@@ -129,6 +130,7 @@
     background-color: rgba(0, 0, 0, .3);
     justify-content: flex-end;
     transition: all .3s ease;
+    z-index: 3;
   }
 
   .navigation_state_closed {
