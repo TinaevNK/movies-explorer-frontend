@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 export default function MoviesCard({ card }) {
   const location = useLocation();
 
-  const [isCardSaved, setIsCardSaved] = useState(false);
+  const [isCardSaved, setIsCardSaved] = useState(card.saved);
 
   const handleOnClick = () => {
     setIsCardSaved(!isCardSaved);
@@ -24,22 +24,21 @@ export default function MoviesCard({ card }) {
           {location.pathname === '/movies' && (
             <button
               type="button"
-              className={`movies-card__save movies-card__save${
-                !isCardSaved ? '' : '_active'
+              className={`movies-card__button movies-card__button_type_${
+                !isCardSaved ? 'save' : 'saved'
               }`}
               onClick={handleOnClick}
             ></button>
           )}
-
-          {/* {location.pathname === "/saved-movies" && (
+          {location.pathname === "/saved-movies" && (
             <button
               type="button"
-              className="button movie-card__unsave"
+              className="movies-card__button movies-card__button_type_unsave"
             ></button>
-          )} */}
+          )}
         </div>
         <span className="movies-card__duration">{card.duration}</span>
       </article>
     </li>
-  );
+  )
 }

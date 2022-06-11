@@ -34,5 +34,5 @@ export default function MoviesCardList({ movies }) {
       </ul>
       <button className="movies-card-list__show-more">Ещё</button>
     </section>
-  );
+  )
 }

@@ -4,7 +4,7 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList.jsx';
 
 export default function Movies({ movies }) {
   return (
-    <main className="movies">
+    <main className="saved-movies">
       <SearchForm />
       <MoviesCardList movies={movies} />
     </main>

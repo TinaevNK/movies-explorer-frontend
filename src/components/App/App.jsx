@@ -5,11 +5,13 @@ import Header from '../Header/Header';
 import Main from '../Main/Main.jsx';
 import Footer from '../Footer/Footer.jsx';
 import Movies from '../Movies/Movies.jsx';
+import SavedMovies from '../Movies/Movies.jsx';
 import moviesData from '../../utils/movies';
 
 export default function App() {
   const [isBurgerOpened, setIsBurgerOpened] = useState(false);
   const [movies, setMovies] = useState([]);
+  const [savedMovies, setSavedMovies] = useState([]);
 
   const onClickBurger = (isBurgerOpened) => {
     setIsBurgerOpened(!isBurgerOpened);
@@ -18,6 +20,12 @@ export default function App() {
   useEffect(() => {
     setMovies(moviesData)
   }, [])
+
+  useEffect(() => {
+    setSavedMovies(moviesData.filter((movie) => {
+      return movie.saved
+    }))
+  },[])
 
   return (
     <div className="app">
@@ -34,8 +42,8 @@ export default function App() {
         </Route>
         <Route exact path="/saved-movies">
           <Header themeDark={true} authorized={true} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened} />
-          {/* <SavedMovies />
-          <Footer /> */}
+          <SavedMovies movies={savedMovies}/>
+          <Footer />
         </Route>
         {/* <Route exact path="/signup">
           <Register />
