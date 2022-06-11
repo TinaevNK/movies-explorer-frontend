@@ -1,19 +1,23 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import Main from '../Main/Main.jsx';
 import Footer from '../Footer/Footer.jsx';
 import Movies from '../Movies/Movies.jsx';
+import moviesData from '../../utils/movies';
 
 export default function App() {
-
   const [isBurgerOpened, setIsBurgerOpened] = useState(false);
-
+  const [movies, setMovies] = useState([]);
 
   const onClickBurger = (isBurgerOpened) => {
     setIsBurgerOpened(!isBurgerOpened);
   }
+
+  useEffect(() => {
+    setMovies(moviesData)
+  }, [])
 
   return (
     <div className="app">
@@ -25,8 +29,8 @@ export default function App() {
         </Route>
         <Route path="/movies">
           <Header themeDark={true} authorized={true} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened} />
-          <Movies />
-          {/* <Footer /> */}
+          <Movies movies={movies} />
+          <Footer />
         </Route>
         <Route exact path="/saved-movies">
           <Header themeDark={true} authorized={true} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened} />
