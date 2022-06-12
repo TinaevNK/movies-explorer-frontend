@@ -5,20 +5,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 70px 0;
+  padding: 70px 30px 59px;
   box-sizing: border-box;
-}
-
-.register__container {
-  max-width: 396px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 17px;
+  min-height: 100vh;
 }
 
 .register__form {
   width: 100%;
+  max-width: 396px;
+  min-height: 525px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
 }
 
 .register__link {
@@ -26,6 +25,7 @@
   color: #4285f4;
   text-decoration: none;
   line-height: 0;
+  max-width: 38px;
 }
 
 .register__link:hover {
@@ -46,14 +46,14 @@
   font-weight: 500;
   font-size: 24px;
   line-height: 1.21;
-  margin: 37px 0 0;
+  margin: 0;
 }
 
 .register__labels-container {
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 30px;
-  margin-top: 40px;
 }
 
 .register__label {
@@ -103,7 +103,7 @@
 }
 
 .register__button {
-  margin-top: 140px;
+  margin-top: auto;
   border-style: none;
   background-color: #4285f4;
   border-radius: 3px;
@@ -138,47 +138,38 @@
   line-height: 1.21;
   color: #8b8b8b;
   text-align: center;
-}
-
-@media screen and (max-width: 800px) {
-  .register {
-    padding: 232px 0;
-  }
+  position: absolute;
+  bottom: -7%;
+  left: 23%;
 }
 
 @media screen and (max-width: 500px) {
   .register {
-    padding: 56px 0 30px;
-  }
-
-  .register__container {
-    max-width: 260px;
-    gap: 15px;
+    padding-top: 56px;
+    justify-content: flex-start;
   }
 
   .register__form {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-  }
-
-  .register__title {
-    margin-top: 50px;
+    gap: 50px;
+    max-width: 260px;
+    flex: 1;
   }
 
   .register__labels-container {
-    width: 100%;
-    margin-top: 80px;
+    margin-top: 30px;
+    gap: 40px;
   }
 
   .register__button {
     font-size: 12px;
     line-height: 1.25;
-    margin-top: 229px;
   }
 
   .register__support {
     font-size: 12px;
     line-height: 1.25;
+    bottom: -6%;
+    left: 15%;
   }
 }
