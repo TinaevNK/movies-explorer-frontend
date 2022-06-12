@@ -7,6 +7,7 @@ import Footer from '../Footer/Footer.jsx';
 import Movies from '../Movies/Movies.jsx';
 import SavedMovies from '../Movies/Movies.jsx';
 import Register from '../Register/Register.jsx';
+import Login from '../Login/Login.jsx';
 import moviesData from '../../utils/movies';
 
 export default function App() {
@@ -49,9 +50,9 @@ export default function App() {
         <Route exact path="/signup">
           <Register />
         </Route>
-        {/* <Route exact path="/signin">
+        <Route exact path="/signin">
           <Login />
-        </Route> */}
+        </Route>
         <Route exact path="/profile">
           <Header themeDark={true} authorized={true} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened} />
           {/* <Profile /> */}
