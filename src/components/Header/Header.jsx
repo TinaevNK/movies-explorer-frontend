@@ -8,7 +8,7 @@ function Header({ themeDark, authorized, onClickBurger, isBurgerOpened }) {
     <header className={`header header_theme_${themeDark ? 'dark' : 'bright'}`}>
       <div className="header__container">
         <Link to="/" className="header__link">
-          <img src={logo} alt="логотип" />
+          <img src={logo} alt="Логотип" />
         </Link>
         <Navigation authorized={authorized} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened} />
       </div>

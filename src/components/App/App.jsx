@@ -6,6 +6,7 @@ import Main from '../Main/Main.jsx';
 import Footer from '../Footer/Footer.jsx';
 import Movies from '../Movies/Movies.jsx';
 import SavedMovies from '../Movies/Movies.jsx';
+import Register from '../Register/Register.jsx';
 import moviesData from '../../utils/movies';
 
 export default function App() {
@@ -45,10 +46,10 @@ export default function App() {
           <SavedMovies movies={savedMovies}/>
           <Footer />
         </Route>
-        {/* <Route exact path="/signup">
+        <Route exact path="/signup">
           <Register />
         </Route>
-        <Route exact path="/signin">
+        {/* <Route exact path="/signin">
           <Login />
         </Route> */}
         <Route exact path="/profile">

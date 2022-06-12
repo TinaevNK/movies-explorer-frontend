@@ -1,0 +1,184 @@
+.register {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 0;
+  box-sizing: border-box;
+}
+
+.register__container {
+  max-width: 396px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.register__form {
+  width: 100%;
+}
+
+.register__link {
+  transition: all 0.3s ease;
+  color: #4285f4;
+  text-decoration: none;
+  line-height: 0;
+}
+
+.register__link:hover {
+  opacity: 0.7;
+}
+
+.register__logo {
+  transition: all 0.3s ease;
+  width: 38px;
+  height: 38px;
+}
+
+.register__logo:hover {
+  transform: rotate(45deg);
+}
+
+.register__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.21;
+  margin: 37px 0 0;
+}
+
+.register__labels-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.register__label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  cursor: pointer;
+  position: relative;
+}
+
+.register__label-text {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  color: #8b8b8b;
+}
+
+.register__input {
+  padding: 6px 0;
+  box-sizing: border-box;
+  border-style: none;
+  border-bottom: 1px solid #424242;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  background-color: transparent;
+  color: #fff;
+}
+
+.register__input_error {
+  color: #ee3465;
+}
+
+.register__input[type="email"] {
+  font-weight: 500;
+}
+
+.register__error {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  color: #ee3465;
+  position: absolute;
+  top: 47px;
+  left: 0;
+}
+
+.register__button {
+  margin-top: 140px;
+  border-style: none;
+  background-color: #4285f4;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.21;
+  width: 100%;
+  padding: 14px 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.register__button:hover {
+  opacity: 0.8;
+}
+
+.register__button_disabled {
+  background-color: #f8f8f8;
+  color: #c2c2c2;
+  cursor: default;
+}
+
+.register__button_disabled:hover {
+  opacity: 1;
+}
+
+.register__support {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #8b8b8b;
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  .register {
+    padding: 232px 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .register {
+    padding: 56px 0 30px;
+  }
+
+  .register__container {
+    max-width: 260px;
+    gap: 15px;
+  }
+
+  .register__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .register__title {
+    margin-top: 50px;
+  }
+
+  .register__labels-container {
+    width: 100%;
+    margin-top: 80px;
+  }
+
+  .register__button {
+    font-size: 12px;
+    line-height: 1.25;
+    margin-top: 229px;
+  }
+
+  .register__support {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+}
