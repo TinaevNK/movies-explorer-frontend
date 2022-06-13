@@ -2,6 +2,7 @@ import './App.css';
 import moviesData from '../../utils/movies';
 import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { useHistory } from 'react-router';
 import Header from '../Header/Header';
 import Main from '../Main/Main.jsx';
 import Footer from '../Footer/Footer.jsx';
@@ -13,23 +14,28 @@ import Profile from '../Profile/Profile.jsx';
 import NotFound from '../NotFound/NotFound.jsx';
 
 export default function App() {
+  const history = useHistory();
   const [isBurgerOpened, setIsBurgerOpened] = useState(false);
   const [movies, setMovies] = useState([]);
   const [savedMovies, setSavedMovies] = useState([]);
 
   function onClickBurger(isBurgerOpened) {
     setIsBurgerOpened(!isBurgerOpened);
-  }
+  };
+
+  function goBack() {
+    history.goBack();
+  };
 
   useEffect(() => {
     setMovies(moviesData);
-  }, [])
+  }, []);
 
   useEffect(() => {
     setSavedMovies(moviesData.filter((movie) => {
       return movie.saved
     }))
-  },[])
+  }, []);
 
   return (
     <div className="app">
@@ -60,7 +66,7 @@ export default function App() {
           <Profile />
         </Route>
         <Route path="*">
-          <NotFound />
+          <NotFound goBack={goBack} />
         </Route>
       </Switch>
     </div>

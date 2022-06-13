@@ -128,7 +128,7 @@
   line-height: 1.23;
   background-color: transparent;
   color: #ee3465;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
   cursor: pointer;
 }
 
