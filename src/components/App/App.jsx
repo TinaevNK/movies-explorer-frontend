@@ -1,4 +1,5 @@
 import './App.css';
+import moviesData from '../../utils/movies';
 import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
@@ -8,7 +9,7 @@ import Movies from '../Movies/Movies.jsx';
 import SavedMovies from '../Movies/Movies.jsx';
 import Register from '../Register/Register.jsx';
 import Login from '../Login/Login.jsx';
-import moviesData from '../../utils/movies';
+import Profile from '../Profile/Profile.jsx';
 
 export default function App() {
   const [isBurgerOpened, setIsBurgerOpened] = useState(false);
@@ -55,7 +56,7 @@ export default function App() {
         </Route>
         <Route exact path="/profile">
           <Header themeDark={true} authorized={true} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened} />
-          {/* <Profile /> */}
+          <Profile />
         </Route>
         {/* <Route path="*">
           <NotFound />
