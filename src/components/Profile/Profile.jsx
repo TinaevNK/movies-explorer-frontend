@@ -12,7 +12,7 @@ export default function Profile() {
 
   useEffect(() => {
     resetForm();
-  }, [resetForm]);
+  }, [resetForm])
 
   return (
     <main className="profile">
@@ -64,5 +64,3 @@ export default function Profile() {
     </main>
   )
 }
-
-

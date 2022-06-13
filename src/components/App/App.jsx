@@ -10,18 +10,19 @@ import SavedMovies from '../Movies/Movies.jsx';
 import Register from '../Register/Register.jsx';
 import Login from '../Login/Login.jsx';
 import Profile from '../Profile/Profile.jsx';
+import NotFound from '../NotFound/NotFound.jsx';
 
 export default function App() {
   const [isBurgerOpened, setIsBurgerOpened] = useState(false);
   const [movies, setMovies] = useState([]);
   const [savedMovies, setSavedMovies] = useState([]);
 
-  const onClickBurger = (isBurgerOpened) => {
+  function onClickBurger(isBurgerOpened) {
     setIsBurgerOpened(!isBurgerOpened);
   }
 
   useEffect(() => {
-    setMovies(moviesData)
+    setMovies(moviesData);
   }, [])
 
   useEffect(() => {
@@ -58,10 +59,10 @@ export default function App() {
           <Header themeDark={true} authorized={true} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened} />
           <Profile />
         </Route>
-        {/* <Route path="*">
+        <Route path="*">
           <NotFound />
-        </Route> */}
+        </Route>
       </Switch>
     </div>
-  );
+  )
 }

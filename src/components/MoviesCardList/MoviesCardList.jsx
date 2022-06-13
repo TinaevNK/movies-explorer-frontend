@@ -18,16 +18,16 @@ export default function MoviesCardList({ movies }) {
   return (
     <section className="movies-card-list">
       <ul className="movies-card-list__list">
-        {screenWidth >= 1280 &&
+        {screenWidth > 917 &&
           movies
             .slice(0, 12)
             .map((card) => <MoviesCard key={card._id} card={card} />)}
-        {screenWidth >= 768 &&
-          screenWidth < 1280 &&
+        {screenWidth >= 584 &&
+          screenWidth < 918 &&
           movies
             .slice(0, 8)
             .map((card) => <MoviesCard key={card._id} card={card} />)}
-        {screenWidth < 768 &&
+        {screenWidth < 584 &&
           movies
             .slice(0, 5)
             .map((card) => <MoviesCard key={card._id} card={card} />)}
