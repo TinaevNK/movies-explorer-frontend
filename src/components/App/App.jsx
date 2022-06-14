@@ -1,8 +1,7 @@
 import './App.css';
 import moviesData from '../../utils/movies';
 import { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { useHistory } from 'react-router';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import Header from '../Header/Header';
 import Main from '../Main/Main.jsx';
 import Footer from '../Footer/Footer.jsx';
