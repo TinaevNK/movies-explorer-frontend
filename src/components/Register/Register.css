@@ -1,0 +1,175 @@
+.register {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 30px 59px;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.register__form {
+  width: 100%;
+  max-width: 396px;
+  min-height: 525px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+}
+
+.register__link {
+  transition: all 0.3s ease;
+  color: #4285f4;
+  text-decoration: none;
+  line-height: 0;
+  max-width: 38px;
+}
+
+.register__link:hover {
+  opacity: 0.7;
+}
+
+.register__logo {
+  transition: all 0.3s ease;
+  width: 38px;
+  height: 38px;
+}
+
+.register__logo:hover {
+  transform: rotate(45deg);
+}
+
+.register__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.21;
+  margin: 0;
+}
+
+.register__labels-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 30px;
+}
+
+.register__label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  cursor: pointer;
+  position: relative;
+}
+
+.register__label-text {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  color: #8b8b8b;
+}
+
+.register__input {
+  padding: 6px 0;
+  box-sizing: border-box;
+  border-style: none;
+  border-bottom: 1px solid #424242;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  background-color: transparent;
+  color: #fff;
+}
+
+.register__input_error {
+  color: #ee3465;
+}
+
+.register__input[type="email"] {
+  font-weight: 500;
+}
+
+.register__error {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  color: #ee3465;
+  position: absolute;
+  top: 47px;
+  left: 0;
+}
+
+.register__button {
+  margin-top: auto;
+  border-style: none;
+  background-color: #4285f4;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.21;
+  width: 100%;
+  padding: 14px 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.register__button:hover {
+  opacity: 0.8;
+}
+
+.register__button_disabled {
+  background-color: #f8f8f8;
+  color: #c2c2c2;
+  cursor: default;
+}
+
+.register__button_disabled:hover {
+  opacity: 1;
+}
+
+.register__support {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #8b8b8b;
+  text-align: center;
+  position: absolute;
+  bottom: -7%;
+  left: 23%;
+}
+
+@media screen and (max-width: 500px) {
+  .register {
+    padding-top: 56px;
+    justify-content: flex-start;
+  }
+
+  .register__form {
+    align-items: center;
+    gap: 50px;
+    max-width: 260px;
+    flex: 1;
+  }
+
+  .register__labels-container {
+    margin-top: 30px;
+    gap: 40px;
+  }
+
+  .register__button {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  .register__support {
+    font-size: 12px;
+    line-height: 1.25;
+    bottom: -6%;
+    left: 15%;
+  }
+}

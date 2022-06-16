@@ -1,0 +1,19 @@
+.app {
+  background-color: #202020;
+  min-height: 100vh;
+  min-width: 320px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  font-family: "Inter", Arial, sans-serif;
+  color: #FFFFFF;
+  overflow: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}

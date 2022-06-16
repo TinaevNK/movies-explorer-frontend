@@ -1,0 +1,133 @@
+.techs {
+  background-color: #272727;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.techs__container {
+  max-width: 1280px;
+  width: 100%;
+  padding: 100px 70px;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  flex-direction: column;
+}
+
+.techs__title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.23;
+  letter-spacing: -0.04em;
+  border-bottom: 1px solid #dadada;
+  padding-bottom: 22px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.techs__quantity {
+  margin: 90px 0 0;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 1.16;
+  letter-spacing: -0.04em;
+}
+
+.techs__about {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43;
+  text-align: center;
+  letter-spacing: -0.04em;
+  max-width: 460px;
+  margin: 26px 0 0;
+}
+
+.techs__stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 90px);
+  justify-content: center;
+  max-width: 700px;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 100px 0 0;
+  gap: 10px;
+}
+
+.techs__stack-item {
+  background-color: #303030;
+  border-radius: 10px;
+}
+
+.techs__stack-name {
+  margin: 0;
+  padding: 21px 0;
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: -0.04em;
+}
+
+@media screen and (max-width: 800px) {
+  .techs__container {
+    padding: 90px 50px;
+  }
+
+  .techs__quantity {
+    margin-top: 80px;
+  }
+
+  .techs__about {
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 22px 0 0;
+  }
+
+  .techs__stack {
+    margin-top: 83px;
+    grid-template-columns: repeat(auto-fill, 84px);
+  }
+
+  .techs__stack-name {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .techs {
+    background-color: #202020;
+  }
+
+  .techs__container {
+    padding: 70px 18px;
+  }
+
+  .techs__title {
+    font-size: 18px;
+    line-height: 1.22;
+    padding-bottom: 27px;
+  }
+
+  .techs__quantity {
+    margin-top: 60px;
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .techs__about {
+    font-size: 11px;
+    line-height: 1.45;
+    margin-top: 25px;
+  }
+
+  .techs__stack {
+    margin-top: 49px;
+    max-width: 180px;
+  }
+}
