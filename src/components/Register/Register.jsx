@@ -18,7 +18,7 @@ export default function Register() {
 
   return (
     <main className="register">
-      <form className="register__form" noValidate onSubmit={handleSubmit}>
+      <form className="register__form" name="register" noValidate onSubmit={handleSubmit}>
         <Link to="/" className="register__link">
           <img src={logo} alt="Логотип" className="register__logo" />
         </Link>

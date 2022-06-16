@@ -18,7 +18,7 @@ export default function Login() {
 
   return (
     <main className="login">
-      <form className="login__form" noValidate onSubmit={handleSubmit}>
+      <form className="login__form" name="login" noValidate onSubmit={handleSubmit}>
         <Link to="/" className="login__link">
           <img src={logo} alt="Логотип" className="login__logo" />
         </Link>

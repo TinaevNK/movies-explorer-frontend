@@ -1,8 +1,11 @@
 import './MoviesCardList.css';
 import { useState, useEffect, useCallback } from 'react';
+import { useLocation } from 'react-router-dom';
 import MoviesCard from '../MoviesCard/MoviesCard.jsx';
 
 export default function MoviesCardList({ movies }) {
+  const location = useLocation();
+
   const [screenWidth, setScreenWidth] = useState(
     document.documentElement.clientWidth
   );
@@ -32,7 +35,9 @@ export default function MoviesCardList({ movies }) {
             .slice(0, 5)
             .map((card) => <MoviesCard key={card._id} card={card} />)}
       </ul>
-      <button className="movies-card-list__show-more">Ещё</button>
+      {location.pathname === "/movies" && (
+        <button className="movies-card-list__show-more">Ещё</button>
+      )}
     </section>
   )
 }

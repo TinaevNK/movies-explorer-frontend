@@ -16,7 +16,7 @@ export default function Profile() {
 
   return (
     <main className="profile">
-      <form className="profile__form" noValidate onSubmit={handleSubmit}>
+      <form className="profile__form" name="profile" noValidate onSubmit={handleSubmit}>
         <h1 className="profile__title">Привет, Никита!</h1>
         <div className="profile__labels-container">
           <label className="profile__label">
