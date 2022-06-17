@@ -2,13 +2,13 @@ import './Navigation.css';
 import { Link, NavLink } from 'react-router-dom';
 import Hamburger from '../Hamburger/Hamburger.jsx';
 
-export default function Navigation({ authorized, isBurgerOpened, onClickBurger }) {
+export default function Navigation({ loggedIn, isBurgerOpened, onClickBurger }) {
 
-  const activeLink = `navigation__link_active_${isBurgerOpened ? 'mobile' : 'desktop'}`
+  const activeLink = `navigation__link_active_${isBurgerOpened ? 'mobile' : 'desktop'}`;
 
   return (
     <>
-      {!authorized ? (
+      {!loggedIn ? (
         <nav className="navigation">
           <ul className="navigation__list">
             <li>
@@ -53,5 +53,5 @@ export default function Navigation({ authorized, isBurgerOpened, onClickBurger }
         </nav>
       )}
     </>
-  );
+  )
 }
