@@ -11,16 +11,26 @@ import Register from '../Register/Register.jsx';
 import Login from '../Login/Login.jsx';
 import Profile from '../Profile/Profile.jsx';
 import NotFound from '../NotFound/NotFound.jsx';
+import Preloader from '../Preloader/Preloader.jsx';
+import InfoTooltip from '../InfoTooltip/InfoTooltip.jsx';
 
 export default function App() {
   const history = useHistory();
+  const [isLoader, setIsLoader] = useState(false);
+  const [isInfoTooltip, setIsInfoTooltip] = useState({ isOpen: false, successful: true, text: ''});
   const [isBurgerOpened, setIsBurgerOpened] = useState(false);
   const [movies, setMovies] = useState([]);
   const [savedMovies, setSavedMovies] = useState([]);
 
+  // нажатие по бургерному меню
   function onClickBurger(isBurgerOpened) {
     setIsBurgerOpened(!isBurgerOpened);
   };
+
+  //закрытие попапа с информацией
+  function closeInfoTooltip() {
+    setIsInfoTooltip({ ...isInfoTooltip, isOpen: false })
+  }
 
   function goBack() {
     history.goBack();
@@ -68,6 +78,8 @@ export default function App() {
           <NotFound goBack={goBack} />
         </Route>
       </Switch>
+      <Preloader isOpen={isLoader} />
+      <InfoTooltip status={isInfoTooltip} onClose={closeInfoTooltip} />
     </div>
   )
 }
