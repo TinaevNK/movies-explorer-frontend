@@ -7,13 +7,9 @@ class Api {
   };
 
   // проверка статуса запроса
-  _requestResult(res) {
-    if (res.ok) {
-      return res.json();
-    } else {
-      return res.json()
-        .then(err => Promise.reject(err.message));
-    }
+  async _requestResult(res) {
+    const result = await res.json();
+    return res.ok ? result : Promise.reject(result.message)
   };
 
   // регистрация
@@ -112,7 +108,3 @@ const mainApi = new Api({  // создаём экземляр класса ра�
 });
 
 export default mainApi;
-
-// return Promise.reject(
-//   `Что-то пошло не так: Ошибка ${res.status} - ${res.statusText}`
-// );
