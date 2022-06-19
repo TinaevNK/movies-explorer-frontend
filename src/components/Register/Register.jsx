@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import logo from '../../images/logo.svg';
 import useFormWithValidation from '../../hooks/useFormWithValidation.jsx';
 
-export default function Register() {
+export default function Register({ handleRegister }) {
   const { values, handleChange, resetForm, errors, isValid } = useFormWithValidation();
 
   function handleSubmit(e) {
     e.preventDefault();
-    // handleRegister(values);
+    handleRegister(values);
   }
 
   useEffect(() => {
@@ -35,6 +35,7 @@ export default function Register() {
               required
               minLength="2"
               maxLength="30"
+              pattern="^[A-Za-zА-Яа-яЁё /s -]+$"
             />
             <span className="register__error">{errors.name || ''}</span>
           </label>
