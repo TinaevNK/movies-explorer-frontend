@@ -31,6 +31,16 @@
   color: #8b8b8b;
 }
 
+.search__error {
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1.2;
+  color: #ee3465;
+  position: absolute;
+  top: 70px;
+  left: 0;
+}
+
 .search__button {
   border: none;
   background-color: #4285f4;
@@ -47,6 +57,7 @@
   border-radius: 48px;
   transform: translateY(50%);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .search__button:hover {
@@ -94,5 +105,10 @@
 
   .search__form::before {
     content: none;
+  }
+
+  .search__error {
+    font-size: 10px;
+    top: 60px;
   }
 }

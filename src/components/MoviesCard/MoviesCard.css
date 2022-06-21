@@ -28,6 +28,10 @@
   border-radius: 6px;
 }
 
+.movies__card-link {
+
+}
+
 .movies-card__poster {
   height: 203px;
   object-fit: cover;

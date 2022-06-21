@@ -25,7 +25,7 @@ export default function Profile({ handleSignOut, handleProfile }) {
   return (
     <main className="profile">
       <form className="profile__form" name="profile" noValidate onSubmit={handleSubmit}>
-        <h1 className="profile__title">{`Привет, ${currentUser.name || 'Пользователь'}!`}</h1>
+        <h1 className="profile__title">{`Привет, ${currentUser.name || ''}!`}</h1>
         <div className="profile__labels-container">
           <label className="profile__label">
             <span className="profile__label-text">Имя</span>
@@ -33,7 +33,7 @@ export default function Profile({ handleSignOut, handleProfile }) {
               name="name"
               className={`profile__input ${errors.name && 'profile__input_error'}`}
               onChange={handleChange}
-              value={values.name || 'Пользователь'}
+              value={values.name || ''}
               type="text"
               required
               minLength="2"
@@ -48,7 +48,7 @@ export default function Profile({ handleSignOut, handleProfile }) {
               name="email"
               className={`profile__input ${errors.email && 'profile__input_error'}`}
               onChange={handleChange}
-              value={values.email || 'user@mail.ru'}
+              value={values.email || ''}
               type="email"
               required
             />
