@@ -19,7 +19,6 @@ export default function MoviesCard({ movie, saved, onLikeClick, onDeleteClick })
     <li className="movies-card">
       <article className="movies-card__item">
         <a
-          className="movies__card-link"
           target="_blank"
           rel="noreferrer"
           href={movie.trailerLink}
@@ -27,7 +26,7 @@ export default function MoviesCard({ movie, saved, onLikeClick, onDeleteClick })
           <img
             src={movie.image}
             alt={movie.nameRU}
-            title={movie.description}
+            title={`Описание: ${movie.description} \n\nСнято: ${movie.country} ${movie.year}г.`}
             className="movies-card__poster"
           />
         </a>
@@ -39,7 +38,9 @@ export default function MoviesCard({ movie, saved, onLikeClick, onDeleteClick })
               className={`movies-card__button movies-card__button_type_${
                 saved ? 'saved' : 'save'
               }`}
-              onClick={handleLikeClick}
+              onClick={saved ? handleDeleteClick : handleLikeClick}
+              aria-label={`${saved ? 'Удалить фильм из сохранённых' : 'Сохранить фильм'}`}
+              title={`${saved ? 'Удалить фильм из сохранённых' : 'Сохранить фильм'}`}
             ></button>
           )}
           {location.pathname === "/saved-movies" && (

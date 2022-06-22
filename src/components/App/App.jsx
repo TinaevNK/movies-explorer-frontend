@@ -264,6 +264,7 @@ export default function App() {
               setIsInfoTooltip={setIsInfoTooltip}
               savedMoviesList={savedMoviesList}
               onLikeClick={handleSaveMovie}
+              onDeleteClick={handleDeleteMovie}
             />
             <ProtectedRoute
               path="/saved-movies"
