@@ -13,6 +13,9 @@ function transformMovies(movies) {
     if(!movie.country) {
       movie.country = 'Russia';
     }
+    if(!movie.nameEN) {
+      movie.nameEN = movie.nameRU;
+    }
   });
   return movies
 };
@@ -52,7 +55,7 @@ function transformDuration(duration) {
 // cравнение сохраненных фильмов
 function getSavedMovieCard(arr, movie) {
   return arr.find((item) => {
-    return item.movieId === movie.id;
+    return item.movieId === (movie.id || movie.movieId);
   });
 };
 

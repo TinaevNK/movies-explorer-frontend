@@ -1,13 +1,11 @@
 import './MoviesCardList.css';
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import useScreenWidth from '../../hooks/useScreenWidth.jsx';
 import { DEVICE_PARAMS } from '../../utils/constants.js';
 import { getSavedMovieCard } from '../../utils/utils.js';
 import MoviesCard from '../MoviesCard/MoviesCard.jsx';
 
 export default function MoviesCardList({ moviesList, savedMoviesList, onLikeClick, onDeleteClick }) {
-  const location = useLocation();
   const screenWidth = useScreenWidth();
   const { desktop, tablet, mobile } = DEVICE_PARAMS;
   const [isMount, setIsMount] = useState(true);
@@ -58,7 +56,7 @@ export default function MoviesCardList({ moviesList, savedMoviesList, onLikeClic
             movie={movie} />
         )}
       </ul>
-      {(location.pathname === "/movies" && showMovieList.length >= 5 && showMovieList.length < moviesList.length) && (
+      {(showMovieList.length >= 5 && showMovieList.length < moviesList.length) && (
         <button className="movies-card-list__show-more" onClick={handleClickMoreMovies}>Ещё</button>
       )}
     </section>

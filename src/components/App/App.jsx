@@ -7,7 +7,7 @@ import Header from '../Header/Header.jsx';
 import Main from '../Main/Main.jsx';
 import Footer from '../Footer/Footer.jsx';
 import Movies from '../Movies/Movies.jsx';
-import SavedMovies from '../Movies/Movies.jsx';
+import SavedMovies from '../SavedMovies/SavedMovies.jsx';
 import Register from '../Register/Register.jsx';
 import Login from '../Login/Login.jsx';
 import Profile from '../Profile/Profile.jsx';
@@ -142,6 +142,7 @@ export default function App() {
   function handleDeleteMovie(movie) {
     const savedMovie = savedMoviesList.find(item => {
       if (item.movieId === movie.id || item.movieId === movie.movieId) {
+        console.log(item);
         return item;
       } else {
         return savedMoviesList;
@@ -272,6 +273,7 @@ export default function App() {
               loggedIn={loggedIn}
               savedMoviesList={savedMoviesList}
               onDeleteClick={handleDeleteMovie}
+              setIsInfoTooltip={setIsInfoTooltip}
             />
             <ProtectedRoute
               path="/profile"

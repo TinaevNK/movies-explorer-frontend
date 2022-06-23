@@ -48,6 +48,8 @@ export default function MoviesCard({ movie, saved, onLikeClick, onDeleteClick })
               type="button"
               className="movies-card__button movies-card__button_type_unsave"
               onClick={handleDeleteClick}
+              aria-label='Удалить фильм из сохранённых'
+              title='Удалить фильм из сохранённых'
             ></button>
           )}
         </div>

@@ -1,9 +1,9 @@
 import "./Movies.css";
 import { useState, useContext, useEffect } from "react";
 import {
-  transformMovies,
-  filterMovies,
-  filterShortMovies,
+  transformMovies, // для адаптирования полей под свой бэкенд
+  filterMovies, // фильтрация начального массива всех фильмов по запросу
+  filterShortMovies, // фильтрация по длительности
 } from "../../utils/utils.js";
 import moviesApi from "../../utils/MoviesApi.js";
 import SearchForm from "../SearchForm/SearchForm.jsx";
@@ -19,12 +19,13 @@ export default function Movies({
 }) {
   const currentUser = useContext(CurrentUserContext);
 
-  const [shortMovies, setShortMovies] = useState(false);
-  const [initialMovies, setInitialMovies] = useState([]);
-  const [filteredMovies, setFilteredMovies] = useState([]);
-  const [NotFound, setNotFound] = useState(false);
+  const [shortMovies, setShortMovies] = useState(false); // состояние чекбокса
+  const [initialMovies, setInitialMovies] = useState([]); // фильмы полученные с запроса
+  const [filteredMovies, setFilteredMovies] = useState([]); // отфильтрованные по чекбоксу и запросу фильмы
+  const [NotFound, setNotFound] = useState(false); // если по запросу ничего не найдено - скроем фильмы
+  const [isAllMovies, setIsAllMovies] = useState([]); // все фильмы от сервара, для единоразового обращения к серверу
 
-  // поиск по массиву у установка в состояния
+  // поиск по массиву и установка состояния
   function handleSetFilteredMovies(movies, userQuery, shortMoviesCheckbox) {
     const moviesList = filterMovies(movies, userQuery, shortMoviesCheckbox);
     if (moviesList.length === 0) {
@@ -49,27 +50,32 @@ export default function Movies({
 
   // поиск по запросу
   function handleSearchSubmit(inputValue) {
-    setIsLoader(true);
     localStorage.setItem(`${currentUser.email} - movieSearch`, inputValue);
     localStorage.setItem(`${currentUser.email} - shortMovies`, shortMovies);
 
-    moviesApi
-      .getMovies()
-      .then((movies) => {
-        handleSetFilteredMovies(
-          transformMovies(movies),
-          inputValue,
-          shortMovies
-        );
-      })
-      .catch(() =>
-        setIsInfoTooltip({
-          isOpen: true,
-          successful: false,
-          text: "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз.",
+    if (isAllMovies.length === 0) {
+      setIsLoader(true);
+      moviesApi
+        .getMovies()
+        .then((movies) => {
+          setIsAllMovies(movies);
+          handleSetFilteredMovies(
+            transformMovies(movies),
+            inputValue,
+            shortMovies
+          );
         })
-      )
-      .finally(() => setIsLoader(false));
+        .catch(() =>
+          setIsInfoTooltip({
+            isOpen: true,
+            successful: false,
+            text: "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз.",
+          })
+        )
+        .finally(() => setIsLoader(false));
+    } else {
+      handleSetFilteredMovies(isAllMovies, inputValue, shortMovies);
+    }
   }
 
   // состояние чекбокса
@@ -95,9 +101,13 @@ export default function Movies({
   // рендер фильмов из локального хранилища
   useEffect(() => {
     if (localStorage.getItem(`${currentUser.email} - movies`)) {
-      const movies = JSON.parse(localStorage.getItem(`${currentUser.email} - movies`));
+      const movies = JSON.parse(
+        localStorage.getItem(`${currentUser.email} - movies`)
+      );
       setInitialMovies(movies);
-      if (localStorage.getItem(`${currentUser.email} - shortMovies`) === "true") {
+      if (
+        localStorage.getItem(`${currentUser.email} - shortMovies`) === "true"
+      ) {
         setFilteredMovies(filterShortMovies(movies));
       } else {
         setFilteredMovies(movies);
@@ -112,14 +122,14 @@ export default function Movies({
         handleShortFilms={handleShortFilms}
         shortMovies={shortMovies}
       />
-      {!NotFound &&
+      {!NotFound && (
         <MoviesCardList
           moviesList={filteredMovies}
           savedMoviesList={savedMoviesList}
           onLikeClick={onLikeClick}
           onDeleteClick={onDeleteClick}
         />
-      }
+      )}
     </main>
   );
 }
