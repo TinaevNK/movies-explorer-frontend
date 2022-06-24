@@ -35,9 +35,11 @@ export default function App() {
   const footerEndpoints = ['/movies', '/saved-movies', '/'];
 
   // нажатие по бургерному меню
-  function onClickBurger(isBurgerOpened) {
+  function onClickBurger() {
     setIsBurgerOpened(!isBurgerOpened);
   }
+
+  useEscapePress(onClickBurger, isBurgerOpened);
 
   //закрытие попапа с информацией
   function closeInfoTooltip() {
@@ -47,6 +49,23 @@ export default function App() {
   // кнопка назад на 404 странице
   function goBack() {
     history.goBack();
+  }
+
+  function useEscapePress(callback, dependency) {
+    useEffect(() => {
+      if (dependency) {
+        const onEscClose = e => {
+          if (e.key === 'Escape') {
+            callback()
+          }
+        }
+        document.addEventListener('keyup', onEscClose);
+        // при размонтировании удалим обработчик данным колбэком
+        return () => {
+          document.removeEventListener('keyup', onEscClose)
+        };
+      }
+    }, [dependency])
   }
 
   function handleRegister({ name, email, password }) {
@@ -293,7 +312,11 @@ export default function App() {
             <Footer />
           </Route>
           <Preloader isOpen={isLoader} />
-          <InfoTooltip status={isInfoTooltip} onClose={closeInfoTooltip} />
+          <InfoTooltip
+            status={isInfoTooltip}
+            onClose={closeInfoTooltip}
+            onEscClose={useEscapePress}
+          />
         </CurrentUserContext.Provider>
       )}
     </div>

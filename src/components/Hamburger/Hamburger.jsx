@@ -2,19 +2,19 @@ import './Hamburger.css';
 import { useMediaQuery } from 'react-responsive';
 import { useEffect } from 'react';
 
-export default function Hamburger({ isBurgerOpened, onClickBurger }) {
+export default function Hamburger({ isBurgerOpened, onClickBurger}) {
   // контроль ширины экрана, для правильной логики работы классов и отображения меню
   const isMobile = useMediaQuery({ query: `(max-width: 800px)` });
 
-  const handleOnClickBurger = () => {
-    onClickBurger(isBurgerOpened);
+  function handleOnClickBurger() {
+    onClickBurger();
   };
 
   useEffect(() => {
-    if (!isMobile) {
-      onClickBurger(true);
+    if (!isMobile && isBurgerOpened) {
+      onClickBurger();
     }
-  }, [isMobile, onClickBurger]);
+  }, [isBurgerOpened, isMobile, onClickBurger]);
 
   return (
     <button

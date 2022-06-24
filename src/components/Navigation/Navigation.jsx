@@ -27,7 +27,7 @@ export default function Navigation({ loggedIn, isBurgerOpened, onClickBurger }) 
           </ul>
         </nav>
       ) : (
-        <nav className={`navigation navigation_state_${isBurgerOpened ? 'opened' : 'closed'}`} onClick={isBurgerOpened && onClickBurger}>
+        <nav className={`navigation navigation_state_${isBurgerOpened ? 'opened' : 'closed'}`} onClick={isBurgerOpened ? onClickBurger : undefined}>
           <Hamburger isBurgerOpened={isBurgerOpened} onClickBurger={onClickBurger} />
           <ul className={`navigation__list navigation__list_logged navigation__list_state_${isBurgerOpened ? 'opened' : 'closed'}`} onClick={handleClickOverlay}>
             {isBurgerOpened && (

@@ -1,9 +1,11 @@
 import './InfoTooltip.css';
 
-export default function InfoTooltip({ onClose, status: { isOpen, successful, text } }) {
+export default function InfoTooltip({ onClose, status: { isOpen, successful, text }, onEscClose}) {
   function handleClickOverlay(e) {
     e.stopPropagation();
   }
+
+  onEscClose(onClose, isOpen);
 
   return (
     <div
