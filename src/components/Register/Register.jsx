@@ -67,9 +67,7 @@ export default function Register({ handleRegister }) {
         </div>
         <button
           type="submit"
-          className={`register__button ${
-            !isValid && 'register__button_disabled'
-          }`}
+          className={`register__button ${!isValid && 'register__button_disabled'}`}
           disabled={!isValid}
         >
           Зарегистрироваться

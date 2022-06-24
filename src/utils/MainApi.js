@@ -1,6 +1,6 @@
 import { BASE_URL } from './constants.js';
 
-//* Класс для взаимодействия с сервером
+// класс для взаимодействия с сервером
 class Api {
   constructor({ baseUrl }) {
     this._baseUrl = baseUrl;
@@ -22,7 +22,7 @@ class Api {
         email,
         password,
       }),
-    }).then((res) => this._requestResult(res));
+    }).then(res => this._requestResult(res));
   }
 
   // вход
@@ -31,7 +31,7 @@ class Api {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
-    }).then((res) => this._requestResult(res));
+    }).then(res => this._requestResult(res));
   }
 
   // запрос данных пользователя
@@ -40,7 +40,7 @@ class Api {
       headers: {
         authorization: `Bearer ${localStorage.getItem('jwt')}`,
       },
-    }).then((res) => this._requestResult(res));
+    }).then(res => this._requestResult(res));
   }
 
   // запрос на редактирование данных пользователя
@@ -52,7 +52,7 @@ class Api {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ name, email }),
-    }).then((res) => this._requestResult(res));
+    }).then(res => this._requestResult(res));
   }
 
   // запрос фильмов
@@ -61,7 +61,7 @@ class Api {
       headers: {
         authorization: `Bearer ${localStorage.getItem('jwt')}`,
       },
-    }).then((res) => this._requestResult(res));
+    }).then(res => this._requestResult(res));
   }
 
   // сохранение фильма
@@ -85,7 +85,7 @@ class Api {
         nameRU: data.nameRU,
         nameEN: data.nameEN,
       }),
-    }).then((res) => this._requestResult(res));
+    }).then(res => this._requestResult(res));
   }
 
   // удаление фильма из сохранённых
@@ -95,7 +95,7 @@ class Api {
       headers: {
         authorization: `Bearer ${localStorage.getItem('jwt')}`,
       },
-    }).then((res) => this._requestResult(res));
+    }).then(res => this._requestResult(res));
   }
 }
 

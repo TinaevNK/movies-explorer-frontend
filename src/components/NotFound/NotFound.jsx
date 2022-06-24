@@ -1,5 +1,4 @@
-import "./NotFound.css";
-
+import './NotFound.css';
 
 export default function NotFound({ goBack }) {
   return (
@@ -12,5 +11,5 @@ export default function NotFound({ goBack }) {
         Назад
       </button>
     </main>
-  )
+  );
 }

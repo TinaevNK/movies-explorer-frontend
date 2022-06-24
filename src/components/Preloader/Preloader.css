@@ -68,7 +68,7 @@
 
 .preloader__round::after,
 .preloader__round::before {
-  content: "";
+  content: '';
   width: 100px;
   height: 100px;
   position: absolute;

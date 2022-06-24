@@ -7,22 +7,18 @@ export default function MoviesCard({ movie, saved, onLikeClick, onDeleteClick })
 
   // сохранение фильма
   function handleLikeClick() {
-    onLikeClick(movie)
+    onLikeClick(movie);
   }
 
   // удаление фильма
   function handleDeleteClick() {
-    onDeleteClick(movie)
+    onDeleteClick(movie);
   }
 
   return (
     <li className="movies-card">
       <article className="movies-card__item">
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href={movie.trailerLink}
-        >
+        <a target="_blank" rel="noreferrer" href={movie.trailerLink}>
           <img
             src={movie.image}
             alt={movie.nameRU}
@@ -39,22 +35,28 @@ export default function MoviesCard({ movie, saved, onLikeClick, onDeleteClick })
                 saved ? 'saved' : 'save'
               }`}
               onClick={saved ? handleDeleteClick : handleLikeClick}
-              aria-label={`${saved ? 'Удалить фильм из сохранённых' : 'Сохранить фильм'}`}
-              title={`${saved ? 'Удалить фильм из сохранённых' : 'Сохранить фильм'}`}
+              aria-label={`${
+                saved ? 'Удалить фильм из сохранённых' : 'Сохранить фильм'
+              }`}
+              title={`${
+                saved ? 'Удалить фильм из сохранённых' : 'Сохранить фильм'
+              }`}
             ></button>
           )}
-          {location.pathname === "/saved-movies" && (
+          {location.pathname === '/saved-movies' && (
             <button
               type="button"
               className="movies-card__button movies-card__button_type_unsave"
               onClick={handleDeleteClick}
-              aria-label='Удалить фильм из сохранённых'
-              title='Удалить фильм из сохранённых'
+              aria-label="Удалить фильм из сохранённых"
+              title="Удалить фильм из сохранённых"
             ></button>
           )}
         </div>
-        <span className="movies-card__duration">{transformDuration(movie.duration)}</span>
+        <span className="movies-card__duration">
+          {transformDuration(movie.duration)}
+        </span>
       </article>
     </li>
-  )
+  );
 }

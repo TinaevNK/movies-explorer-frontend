@@ -18,12 +18,12 @@ function transformMovies(movies) {
     }
   });
   return movies
-};
+}
 
 // фильтрация по длительности
 function filterShortMovies(movies) {
   return movies.filter(movie => movie.duration < SHORTMOVIES_DURATION);
-};
+}
 
 // фильтрация по запросу
 function filterMovies(movies, userQuery, shortMoviesCheckbox) {
@@ -39,7 +39,7 @@ function filterMovies(movies, userQuery, shortMoviesCheckbox) {
   } else {
     return moviesByUserQuery;
   }
-};
+}
 
 // преобразование длительности
 function transformDuration(duration) {
@@ -50,14 +50,14 @@ function transformDuration(duration) {
   } else {
     return `${hours}ч ${minutes}м`;
   }
-};
+}
 
 // cравнение сохраненных фильмов
 function getSavedMovieCard(arr, movie) {
   return arr.find((item) => {
     return item.movieId === (movie.id || movie.movieId);
   });
-};
+}
 
 export {
   transformMovies,
@@ -65,4 +65,4 @@ export {
   filterShortMovies,
   transformDuration,
   getSavedMovieCard,
-}
+};

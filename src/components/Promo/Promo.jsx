@@ -12,8 +12,13 @@ export default function Promo() {
           <p className="promo__description">
             Листайте ниже, чтобы узнать больше про этот проект и его создателя.
           </p>
-          <a href="https://goo.su/P65u" target="_blank" rel="noopener noreferrer" className="promo__learn-more-link" >
-          Узнать больше
+          <a
+            href="https://goo.su/P65u"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="promo__learn-more-link"
+          >
+            Узнать больше
           </a>
         </div>
         <img src={logo} alt="логотип - Земной шар" className="promo__logo" />

@@ -10,7 +10,7 @@ export default function MoviesCardList({ moviesList, savedMoviesList, onLikeClic
   const { desktop, tablet, mobile } = DEVICE_PARAMS;
   const [isMount, setIsMount] = useState(true);
   const [showMovieList, setShowMovieList] = useState([]);
-  const [cardsShowDetails, setCardsShowDetails] = useState({ total: 12, more: 4 });
+  const [cardsShowDetails, setCardsShowDetails] = useState({ total: 12, more: 3 });
 
   // количество отображаемых карточек при разной ширине экрана
   useEffect(() => {
@@ -42,23 +42,29 @@ export default function MoviesCardList({ moviesList, savedMoviesList, onLikeClic
       const newCards = moviesList.slice(start, end);
       setShowMovieList([...showMovieList, ...newCards]);
     }
-  };
+  }
 
   return (
     <section className="movies-card-list">
       <ul className="movies-card-list__list">
-        {showMovieList.map(movie =>
+        {showMovieList.map(movie => (
           <MoviesCard
             key={movie.id || movie._id}
             saved={getSavedMovieCard(savedMoviesList, movie)}
             onLikeClick={onLikeClick}
             onDeleteClick={onDeleteClick}
-            movie={movie} />
-        )}
+            movie={movie}
+          />
+        ))}
       </ul>
-      {(showMovieList.length >= 5 && showMovieList.length < moviesList.length) && (
-        <button className="movies-card-list__show-more" onClick={handleClickMoreMovies}>Ещё</button>
+      {showMovieList.length >= 5 && showMovieList.length < moviesList.length && (
+        <button
+          className="movies-card-list__show-more"
+          onClick={handleClickMoreMovies}
+        >
+          Ещё
+        </button>
       )}
     </section>
-  )
+  );
 }

@@ -51,7 +51,7 @@
 .navigation__link_signin {
   color: black;
   padding: 8px 20px;
-  background-color: #3DDC84;
+  background-color: #3ddc84;
   border-radius: 3px;
 }
 
@@ -64,7 +64,7 @@
   padding-left: 15px;
   padding-right: 34px;
   min-height: 30px;
-  box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 3px 14px rgba(0, 0, 0, .08);
   border-radius: 40px;
 }
 
@@ -76,7 +76,7 @@
   width: 30px;
   height: 100%;
   border-radius: 50px;
-  background-color:#313131;
+  background-color: #313131;
   background-image: url('../../images/profile.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -92,7 +92,7 @@
   .navigation__list_logged {
     gap: 28px;
     position: absolute;
-    top:0;
+    top: 0;
     flex-direction: column;
     height: 100vh;
     width: 67%;
@@ -104,7 +104,7 @@
   }
 
   .navigation__item:last-child {
-    margin: auto 0 90px 0
+    margin: auto 0 90px 0;
   }
 
   .navigation__item:first-child {

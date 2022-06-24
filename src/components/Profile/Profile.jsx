@@ -58,9 +58,7 @@ export default function Profile({ handleSignOut, handleProfile }) {
         <div className="profile__button-container">
           <button
             type="submit"
-            className={`profile__button-edit ${
-              requirementValidity ? 'profile__button-edit_disabled' : ''
-            }`}
+            className={`profile__button-edit ${requirementValidity ? 'profile__button-edit_disabled' : ''}`}
             disabled={requirementValidity ? true : false}
           >
             Редактировать
@@ -71,5 +69,5 @@ export default function Profile({ handleSignOut, handleProfile }) {
         </div>
       </form>
     </main>
-  )
+  );
 }

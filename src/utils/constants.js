@@ -6,28 +6,23 @@ const DEVICE_PARAMS = {
     width: 917,
     cards: {
       total: 12,
-      more: 3
-    }
+      more: 3,
+    },
   },
   tablet: {
     width: 583,
     cards: {
       total: 8,
-      more: 2
-    }
+      more: 2,
+    },
   },
   mobile: {
     width: 583,
     cards: {
       total: 5,
-      more: 2
-    }
+      more: 2,
+    },
   },
-}
+};
 
-export {
-  BASE_URL,
-  MOVIES_URL,
-  SHORTMOVIES_DURATION,
-  DEVICE_PARAMS,
-}
+export { BASE_URL, MOVIES_URL, SHORTMOVIES_DURATION, DEVICE_PARAMS };

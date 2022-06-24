@@ -12,5 +12,5 @@ export default function FilterCheckbox({ shortMovies, handleShortFilms }) {
       <span className="filter__tumbler"></span>
       <span className="filter__text">Короткометражки</span>
     </label>
-  )
+  );
 }

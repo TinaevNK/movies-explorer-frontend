@@ -7,12 +7,20 @@ function Header({ loggedIn, onClickBurger, isBurgerOpened }) {
   const location = useLocation();
 
   return (
-    <header className={`header header_theme_${location.pathname === "/" ? 'bright' : 'dark'}`}>
+    <header
+      className={`header header_theme_${
+        location.pathname === '/' ? 'bright' : 'dark'
+      }`}
+    >
       <div className="header__container">
-        <Link to="/" className="header__link">
+        <Link to='/' className='header__link'>
           <img src={logo} alt="Логотип" />
         </Link>
-        <Navigation loggedIn={loggedIn} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened} />
+        <Navigation
+          loggedIn={loggedIn}
+          onClickBurger={onClickBurger}
+          isBurgerOpened={isBurgerOpened}
+        />
       </div>
     </header>
   );

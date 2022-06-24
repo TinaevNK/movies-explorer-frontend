@@ -23,7 +23,7 @@ export default function SearchForm({ handleSearchSubmit, handleShortFilms, short
 
   //состояние инпута из локального хранилища
   useEffect(() => {
-    if (location.pathname === "/movies" && localStorage.getItem(`${currentUser.email} - movieSearch`)) {
+    if (location.pathname === '/movies' && localStorage.getItem(`${currentUser.email} - movieSearch`)) {
       const searchValue = localStorage.getItem(`${currentUser.email} - movieSearch`);
       values.search = searchValue;
       setIsValid(true);
@@ -38,7 +38,7 @@ export default function SearchForm({ handleSearchSubmit, handleShortFilms, short
           name="search"
           type="text"
           placeholder="Фильм"
-          autoComplete='off'
+          autoComplete="off"
           value={values.search || ''}
           onChange={handleChange}
           required
@@ -46,9 +46,7 @@ export default function SearchForm({ handleSearchSubmit, handleShortFilms, short
         <span className="search__error">{errorQuery}</span>
         <button className="search__button" type="submit"></button>
       </form>
-      <FilterCheckbox
-        shortMovies={shortMovies}
-        handleShortFilms={handleShortFilms} />
+      <FilterCheckbox shortMovies={shortMovies} handleShortFilms={handleShortFilms} />
     </section>
   )
 }

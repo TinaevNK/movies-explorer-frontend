@@ -57,7 +57,6 @@
   margin-top: 26px;
 }
 
-
 .about-project__scheme {
   display: flex;
   width: 100%;
@@ -88,7 +87,7 @@
   font-size: 14px;
   line-height: 1.21;
   color: #000;
-  background-color: #3DDC84;
+  background-color: #3ddc84;
 }
 
 .about-project__frontend-duration {
@@ -106,7 +105,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 1.21;
-  color: #8B8B8B;
+  color: #8b8b8b;
 }
 
 @media screen and (max-width: 800px) {
