@@ -18,12 +18,18 @@ export default function SavedMovies({ onDeleteClick, savedMoviesList, setIsInfoT
 
   // поиск по запросу
   function handleSearchSubmit(inputValue) {
-    if (filterMovies(savedMoviesList, inputValue, shortMovies).length === 0) {
+    const moviesList = filterMovies(savedMoviesList, inputValue, shortMovies);
+    if (moviesList.length === 0) {
       setNotFound(true);
+      setIsInfoTooltip({
+        isOpen: true,
+        successful: false,
+        text: 'Ничего не найдено.',
+      });
     } else {
       setNotFound(false);
-      setFilteredMovies(filterMovies(savedMoviesList, inputValue, shortMovies));
-      setShowedMovies(filterMovies(savedMoviesList, inputValue, shortMovies));
+      setFilteredMovies(moviesList);
+      setShowedMovies(moviesList);
     }
   }
 
