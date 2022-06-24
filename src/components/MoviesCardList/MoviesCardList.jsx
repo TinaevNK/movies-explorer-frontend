@@ -1,28 +1,35 @@
 import './MoviesCardList.css';
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import useScreenWidth from '../../hooks/useScreenWidth.jsx';
 import { DEVICE_PARAMS } from '../../utils/constants.js';
 import { getSavedMovieCard } from '../../utils/utils.js';
 import MoviesCard from '../MoviesCard/MoviesCard.jsx';
 
+
 export default function MoviesCardList({ moviesList, savedMoviesList, onLikeClick, onDeleteClick }) {
   const screenWidth = useScreenWidth();
+
   const { desktop, tablet, mobile } = DEVICE_PARAMS;
   const [isMount, setIsMount] = useState(true);
   const [showMovieList, setShowMovieList] = useState([]);
   const [cardsShowDetails, setCardsShowDetails] = useState({ total: 12, more: 3 });
 
+  const location = useLocation();
+
   // количество отображаемых карточек при разной ширине экрана
   useEffect(() => {
-    if (screenWidth > desktop.width) {
-      setCardsShowDetails(desktop.cards);
-    } else if (screenWidth <= desktop.width && screenWidth > mobile.width) {
-      setCardsShowDetails(tablet.cards);
-    } else {
-      setCardsShowDetails(mobile.cards);
+    if (location.pathname === '/movies') {
+      if (screenWidth > desktop.width) {
+        setCardsShowDetails(desktop.cards);
+      } else if (screenWidth <= desktop.width && screenWidth > mobile.width) {
+        setCardsShowDetails(tablet.cards);
+      } else {
+        setCardsShowDetails(mobile.cards);
+      }
+      return () => setIsMount(false);
     }
-    return () => setIsMount(false);
-  }, [screenWidth, isMount, desktop, tablet, mobile]);
+  }, [screenWidth, isMount, desktop, tablet, mobile, location.pathname]);
 
   // изменяем отображаемый массив фильмов в зависимости от ширины экрана
   useEffect(() => {
@@ -57,7 +64,7 @@ export default function MoviesCardList({ moviesList, savedMoviesList, onLikeClic
           />
         ))}
       </ul>
-      {showMovieList.length >= 5 && showMovieList.length < moviesList.length && (
+      {location.pathname === '/movies' && showMovieList.length >= 5 && showMovieList.length < moviesList.length && (
         <button
           className="movies-card-list__show-more"
           onClick={handleClickMoreMovies}
