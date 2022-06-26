@@ -3,6 +3,7 @@ import mainApi from '../../utils/MainApi.js';
 import CurrentUserContext from '../../contexts/CurrentUserContext.jsx';
 import { useState, useEffect } from 'react';
 import { Route, Switch, Redirect, useHistory, useLocation } from 'react-router-dom';
+import useEscapePress from '../../hooks/useEscapePress.jsx';
 import Header from '../Header/Header.jsx';
 import Main from '../Main/Main.jsx';
 import Footer from '../Footer/Footer.jsx';
@@ -49,23 +50,6 @@ export default function App() {
   // кнопка назад на 404 странице
   function goBack() {
     history.goBack();
-  }
-
-  function useEscapePress(callback, dependency) {
-    useEffect(() => {
-      if (dependency) {
-        const onEscClose = e => {
-          if (e.key === 'Escape') {
-            callback()
-          }
-        }
-        document.addEventListener('keyup', onEscClose);
-        // при размонтировании удалим обработчик данным колбэком
-        return () => {
-          document.removeEventListener('keyup', onEscClose)
-        };
-      }
-    }, [dependency])
   }
 
   function handleRegister({ name, email, password }) {
@@ -234,10 +218,13 @@ export default function App() {
 
   // получение массива сохраненных фильмов
   useEffect(() => {
-    if (loggedIn) {
+    if (loggedIn && currentUser) {
       mainApi
         .getSavedMovies()
-        .then(data => setSavedMoviesList(data))
+        .then(data => {
+          const UserMoviesList = data.filter(m => m.owner === currentUser._id);
+          setSavedMoviesList(UserMoviesList);
+        })
         .catch(err =>
           setIsInfoTooltip({
             isOpen: true,
@@ -246,7 +233,7 @@ export default function App() {
           })
         );
     }
-  }, [loggedIn]);
+  }, [currentUser, loggedIn]);
 
   return (
     <div className="app">
@@ -315,7 +302,6 @@ export default function App() {
           <InfoTooltip
             status={isInfoTooltip}
             onClose={closeInfoTooltip}
-            onEscClose={useEscapePress}
           />
         </CurrentUserContext.Provider>
       )}

@@ -1,11 +1,12 @@
 import './InfoTooltip.css';
+import useEscapePress from '../../hooks/useEscapePress.jsx';
 
-export default function InfoTooltip({ onClose, status: { isOpen, successful, text }, onEscClose}) {
+export default function InfoTooltip({ onClose, status: { isOpen, successful, text } }) {
   function handleClickOverlay(e) {
     e.stopPropagation();
   }
 
-  onEscClose(onClose, isOpen);
+  useEscapePress(onClose, isOpen);
 
   return (
     <div
