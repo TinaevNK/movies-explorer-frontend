@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import logo from '../../images/logo.svg';
 import useFormWithValidation from '../../hooks/useFormWithValidation.jsx';
 
-export default function Login() {
+export default function Login({ handleLogin }) {
   const { values, handleChange, resetForm, errors, isValid } = useFormWithValidation();
 
   function handleSubmit(e) {
     e.preventDefault();
-    // handleLogin(values);
+    handleLogin(values);
   }
 
   useEffect(() => {
@@ -18,8 +18,13 @@ export default function Login() {
 
   return (
     <main className="login">
-      <form className="login__form" name="login" noValidate onSubmit={handleSubmit}>
-        <Link to="/" className="login__link">
+      <form
+        className="login__form"
+        name="login"
+        noValidate
+        onSubmit={handleSubmit}
+      >
+        <Link to='/' className='login__link'>
           <img src={logo} alt="Логотип" className="login__logo" />
         </Link>
         <h1 className="login__title">Рады видеть!</h1>
@@ -40,7 +45,9 @@ export default function Login() {
             <span className="login__label-text">Пароль</span>
             <input
               name="password"
-              className={`login__input ${errors.password && 'login__input_error'}`}
+              className={`login__input ${
+                errors.password && 'login__input_error'
+              }`}
               onChange={handleChange}
               value={values.password || ''}
               type="password"
@@ -51,20 +58,18 @@ export default function Login() {
         </div>
         <button
           type="submit"
-          className={`login__button ${
-            !isValid && 'login__button_disabled'
-          }`}
+          className={`login__button ${!isValid && 'login__button_disabled'}`}
           disabled={!isValid}
         >
           Войти
         </button>
         <span className="login__support">
           Ещё не зарегистрированы?&nbsp;
-          <Link to="signup" className="login__link">
+          <Link to='/signup' className="login__link">
             Регистрация
           </Link>
         </span>
       </form>
     </main>
-  )
+  );
 }

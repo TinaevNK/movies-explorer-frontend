@@ -9,7 +9,7 @@
 .portfolio__container {
   max-width: 1280px;
   width: 100%;
-  padding: 0px 70px 125px;
+  padding: 0 70px 125px;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
@@ -39,7 +39,7 @@
   padding-bottom: 19px;
   border-bottom: 1px solid #424242;
   box-sizing: border-box;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
 }
 
 .portfolio__projects-item:hover {
@@ -60,18 +60,18 @@
   color: #fff;
   width: 100%;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
 }
 
 .portfolio__link:hover {
-  opacity: 0.7;
+  opacity: .7;
 }
 
 .portfolio__link::after {
-  content: "";
+  content: '';
   width: 24px;
   height: 18px;
-  background-image: url("../../images/arrow.svg");
+  background-image: url('../../images/arrow.svg');
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
@@ -82,7 +82,7 @@
 
 @media screen and (max-width: 800px) {
   .portfolio__container {
-    padding: 0px 50px 90px;
+    padding: 0 50px 90px;
   }
 
   .portfolio__title {
@@ -114,7 +114,7 @@
 
 @media screen and (max-width: 400px) {
   .portfolio__container {
-    padding: 0px 14px 70px;
+    padding: 0 14px 70px;
     gap: 40px;
   }
 
@@ -123,7 +123,3 @@
     line-height: 1.43;
   }
 }
-
-/* Цвета полосок сделал на свой выбор, хоть и в макете они почему-то
-разного цвета... Добавил hover для смены цвета
-При необходимости - поменяю как в макете*/

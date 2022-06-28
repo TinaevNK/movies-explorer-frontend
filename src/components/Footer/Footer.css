@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  margin-top: auto;
 }
 
 .footer__container {
@@ -56,11 +57,11 @@
   font-size: 13px;
   line-height: 1.23px;
   color: #fff;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
 }
 
 .footer__link:hover {
-  opacity: 0.7;
+  opacity: .7;
 }
 
 @media screen and (max-width: 800px) {
@@ -72,7 +73,7 @@
 @media screen and (max-width: 400px) {
   .footer__container {
     padding: 79px 10px 10px;
-    gap: 26px
+    gap: 26px;
   }
 
   .footer__title {

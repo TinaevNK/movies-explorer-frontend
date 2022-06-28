@@ -32,7 +32,8 @@
   font-size: 12px;
   line-height: 1.25;
   margin-top: 60px;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
+  cursor: pointer;
 }
 
 .movies-card-list__show-more:hover {

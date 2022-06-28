@@ -16,7 +16,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 className="footer__link"
-              >Яндекс.Практикум</a>
+              >
+                Яндекс.Практикум
+              </a>
             </li>
             <li>
               <a
@@ -24,7 +26,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 className="footer__link"
-              >Github</a>
+              >
+                Github
+              </a>
             </li>
             <li>
               <a
@@ -32,7 +36,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 className="footer__link"
-              >ВКонтакте</a>
+              >
+                ВКонтакте
+              </a>
             </li>
           </ul>
         </div>

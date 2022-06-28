@@ -21,7 +21,7 @@
 }
 
 .login__link {
-  transition: all 0.3s ease;
+  transition: all .3s ease;
   color: #4285f4;
   text-decoration: none;
   line-height: 0;
@@ -29,11 +29,11 @@
 }
 
 .login__link:hover {
-  opacity: 0.7;
+  opacity: .7;
 }
 
 .login__logo {
-  transition: all 0.3s ease;
+  transition: all .3s ease;
   width: 38px;
   height: 38px;
 }
@@ -88,7 +88,7 @@
   color: #ee3465;
 }
 
-.login__input[type="email"] {
+.login__input[type='email'] {
   font-weight: 500;
 }
 
@@ -113,13 +113,13 @@
   width: 100%;
   padding: 14px 0;
   box-sizing: border-box;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
   cursor: pointer;
   font-weight: 500;
 }
 
 .login__button:hover {
-  opacity: 0.8;
+  opacity: .8;
 }
 
 .login__button_disabled {
